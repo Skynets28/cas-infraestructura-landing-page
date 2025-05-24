@@ -1,0 +1,506 @@
+/* Variables CSS */
+:root {
+    --primary-color: #38b6ff;      /* Azul Brillante (el de tu logo) */
+    --primary-dark-color: #008DD6; /* Azul más oscuro para hover/activos */
+    --text-dark-color: #2C3E50;    /* Gris Oscuro para textos principales */
+    --text-light-color: #6C7A89;   /* Gris medio para descripciones */
+    --background-light: #FFFFFF;   /* Blanco puro para fondos */
+    --background-soft: #F9F9F9;    /* Blanco suave/gris muy claro */
+    --border-color: #E0E0E0;       /* Color suave para bordes */
+    --shadow-color: rgba(0, 0, 0, 0.08); /* Sombra ligera */
+    --gradient-start: #38b6ff;
+    --gradient-end: #008DD6;
+}
+
+/* Estilos Generales */
+body {
+    font-family: 'Poppins', sans-serif; /* Usaremos una fuente más moderna como Poppins (se puede cargar desde Google Fonts) */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--text-dark-color);
+    background-color: var(--background-light);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased; /* Mejorar renderizado de fuentes en WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Mejorar renderizado de fuentes en Firefox */
+}
+
+/* Importar Poppins desde Google Fonts (opcional, si lo deseas) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+/* Contenedores Generales */
+.header-container, .hero-content, .services-container, .footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Header */
+.new-header {
+    background-color: var(--background-light);
+    box-shadow: 0 2px 10px var(--shadow-color); /* Sombra sutil como en el ejemplo */
+    padding: 15px 0;
+    position: sticky; /* Sticky header */
+    top: 0;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.new-header .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Padding horizontal para el contenedor del header */
+}
+
+.logo-link {
+    display: flex; /* Para alinear verticalmente el logo */
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 40px; /* Ajusta el tamaño del logo */
+    width: auto;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px; /* Espacio entre los elementos del menú */
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-dark-color);
+    font-weight: 500; /* Medium weight */
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color); /* Color del logo al pasar el ratón */
+}
+
+.header-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 30px; /* Botón más redondeado */
+    font-weight: 600; /* Semi-bold */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.header-btn:hover {
+    background-color: var(--primary-dark-color);
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: var(--background-light);
+    padding: 80px 0; /* Mayor padding para la sección */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 600px; /* Altura mínima para asegurar espacio */
+    position: relative;
+    overflow: hidden; /* Para contener las formas decorativas si las añades */
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px; /* Espacio entre texto e imagen */
+    flex-wrap: wrap; /* Para responsive */
+    padding: 0 20px; /* Padding horizontal */
+}
+
+.hero-text {
+    flex: 1; /* Ocupa el espacio disponible */
+    min-width: 300px; /* Ancho mínimo para el texto */
+}
+
+.hero-text h1 {
+    font-size: 3.5em; /* Título grande y prominente */
+    font-weight: 700; /* Bold */
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: var(--text-dark-color);
+}
+
+.hero-text h1 .highlight {
+    color: var(--primary-color); /* Parte destacada del título */
+}
+
+.hero-text p {
+    font-size: 1.15em;
+    color: var(--text-light-color);
+    margin-bottom: 30px;
+    max-width: 550px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px; /* Espacio entre botones */
+    flex-wrap: wrap;
+}
+
+.btn.primary-btn {
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end)); /* Degradado para el botón principal */
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(56, 182, 255, 0.3); /* Sombra del color principal */
+}
+
+.btn.primary-btn:hover {
+    background: linear-gradient(to right, var(--gradient-end), var(--gradient-start)); /* Degradado inverso al hover */
+    box-shadow: 0 10px 25px rgba(56, 182, 255, 0.4);
+    transform: translateY(-3px);
+}
+
+.btn.secondary-btn {
+    background-color: transparent;
+    color: var(--text-dark-color);
+    border: 2px solid var(--border-color); /* Borde claro para el segundo botón */
+    padding: 13px 30px; /* Ajustado para que el padding sea similar al primary-btn */
+    border-radius: 30px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre texto y flecha */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn.secondary-btn:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.btn.secondary-btn .arrow-down {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid var(--text-dark-color); /* Color de la flecha */
+    transition: border-top-color 0.3s ease;
+}
+
+.btn.secondary-btn:hover .arrow-down {
+    border-top-color: #fff; /* Flecha blanca al hover */
+}
+
+
+.hero-image {
+    flex: 1;
+    min-width: 300px; /* Ancho mínimo para la imagen */
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Elimina espacio extra debajo de la imagen */
+    margin: 0 auto; /* Centra la imagen si es más pequeña que el contenedor */
+}
+
+/* Services Section */
+.services-section {
+    background-color: var(--background-soft); /* Fondo suave para esta sección */
+    padding: 80px 0;
+    text-align: center;
+}
+
+.services-container {
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2.8em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--text-dark-color);
+}
+
+.section-title strong { /* Si quieres que una parte del título sea strong */
+    color: var(--primary-color);
+}
+
+.section-subtitle {
+    font-size: 1.2em;
+    color: var(--text-light-color);
+    max-width: 700px;
+    margin: 0 auto 50px auto; /* Centrar y añadir margen inferior */
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: var(--background-light);
+    padding: 30px;
+    border-radius: 15px; /* Bordes más redondeados */
+    box-shadow: 0 5px 20px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left; /* Texto alineado a la izquierda dentro de la tarjeta */
+}
+
+.service-card:hover {
+    transform: translateY(-8px); /* Efecto de elevación más pronunciado */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); /* Sombra más grande al hover */
+}
+
+.icon-placeholder {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color); /* Color del icono */
+    border-radius: 12px; /* Ligeramente redondeado */
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Si usas SVG, puedes ponerlo directamente aquí o como background-image */
+    /* Ejemplo: background-image: url('path/to/icon.svg'); background-size: 70%; background-repeat: no-repeat; background-position: center; */
+}
+
+.service-card h3 {
+    font-size: 1.5em;
+    color: var(--text-dark-color);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.service-card p {
+    font-size: 0.95em;
+    color: var(--text-light-color);
+    margin-bottom: 20px;
+}
+
+.read-more {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: var(--primary-dark-color);
+}
+
+/* Footer */
+.new-footer {
+    background-color: var(--text-dark-color); /* Fondo oscuro del footer */
+    color: #fff;
+    padding: 60px 0 20px 0; /* Más padding arriba */
+    font-size: 0.95em;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Para que las columnas se envuelvan */
+    gap: 30px; /* Espacio entre columnas */
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Separador suave */
+}
+
+.footer-col {
+    flex: 1; /* Distribuye el espacio */
+    min-width: 200px; /* Ancho mínimo para las columnas */
+}
+
+.footer-col .logo-img.footer-logo {
+    height: 45px; /* Tamaño del logo en el footer */
+    margin-bottom: 15px;
+}
+
+.footer-col h4 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: var(--primary-color); /* Títulos del footer con el color principal */
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: rgba(255, 255, 255, 0.7); /* Enlaces más suaves */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--primary-color);
+}
+
+.footer-col p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 10px;
+}
+
+.footer-slogan {
+    font-size: 1.1em;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.social-icons a {
+    display: inline-block;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    line-height: 35px; /* Centrar texto/icono */
+    text-align: center;
+    margin-right: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Media Queries para Responsive Design */
+@media (max-width: 1024px) {
+    .hero-text h1 {
+        font-size: 3em;
+    }
+    .hero-text p {
+        font-size: 1.1em;
+    }
+    .main-nav ul {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .new-header .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        width: 100%; /* Ocupa todo el ancho */
+    }
+
+    .header-btn {
+        margin-top: 10px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-image {
+        margin-top: 40px;
+    }
+
+    .hero-buttons {
+        justify-content: center; /* Centrar botones en móvil */
+    }
+
+    .section-title {
+        font-size: 2.2em;
+    }
+
+    .section-subtitle {
+        font-size: 1.1em;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+
+    .service-card {
+        text-align: center; /* Centrar contenido de la tarjeta en móvil */
+    }
+
+    .icon-placeholder {
+        margin: 0 auto 20px auto; /* Centrar icono */
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container, .hero-content, .services-container, .footer-container {
+        width: 95%;
+        padding: 10px 0;
+    }
+
+    .hero-section {
+        padding: 60px 0;
+        min-height: auto; /* Permite que la altura se ajuste al contenido */
+    }
+
+    .hero-text h1 {
+        font-size: 2em;
+    }
+
+    .hero-text p {
+        font-size: 1em;
+    }
+
+    .btn.primary-btn, .btn.secondary-btn {
+        padding: 12px 25px;
+        font-size: 0.95em;
+    }
+
+    .hero-buttons {
+        flex-direction: column; /* Apila los botones */
+        gap: 15px;
+    }
+
+    .section-title {
+        font-size: 1.8em;
+    }
+
+    .section-subtitle {
+        font-size: 1em;
+    }
+
+    .service-card {
+        padding: 25px;
+    }
+}
