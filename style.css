@@ -262,17 +262,30 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); /* Sombra más grande al hover */
 }
 
-.icon-placeholder {
+/*.icon-placeholder {
     width: 60px;
     height: 60px;
-    background-color: var(--primary-color); /* Color del icono */
-    border-radius: 12px; /* Ligeramente redondeado */
+    background-color: var(--primary-color); /* Color del icono 
+    border-radius: 12px; /* Ligeramente redondeado 
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Si usas SVG, puedes ponerlo directamente aquí o como background-image */
-    /* Ejemplo: background-image: url('path/to/icon.svg'); background-size: 70%; background-repeat: no-repeat; background-position: center; */
+    background-image: url(/images/comunicaciones.png);
+    /* Si usas SVG, puedes ponerlo directamente aquí o como background-image 
+    /* Ejemplo: background-image: url('path/to/icon.svg'); background-size: 70%; background-repeat: no-repeat; background-position: center; 
+}*/
+
+/* Nuevos estilos para los iconos de servicio */
+.service-icon {
+    width: 75px;   /* Tamaño del icono, puedes ajustarlo */
+    height: 75px;  /* Mantiene la proporción */
+    object-fit: contain; /* Asegura que la imagen se ajuste dentro de las dimensiones sin recortarse */
+    margin-bottom: 20px; /* Espacio debajo del icono */
+    display: block; /* Para que el margen automático lo centre si la tarjeta es text-align: center */
+    margin-left: 0; /* Asegura alineación a la izquierda si service-card es text-align: left */
+    border-radius: 10px;
+    /* Si la tarjeta de servicio fuera 'text-align: center;', usarías 'margin: 0 auto 20px auto;' para centrar el icono */
 }
 
 .service-card h3 {
