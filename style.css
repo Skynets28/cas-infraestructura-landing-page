@@ -10,6 +10,11 @@
     --shadow-color: rgba(0, 0, 0, 0.08); /* Sombra ligera */
     --gradient-start: #38b6ff;
     --gradient-end: #008DD6;
+    /* VARIABLES ACTUALIZADAS PARA EL FORMULARIO (SIN VERDE) */
+    --input-background: #F2F4F8; /* Un gris muy suave para el fondo de los inputs */
+    --form-button-color: var(--primary-color); /* Usamos el azul principal para el botón de enviar */
+    --form-button-hover: var(--primary-dark-color); /* El azul oscuro para el hover del botón */
+    --contact-text-highlight: var(--primary-color); /* Para el "Ponte en Contacto" */
 }
 
 /* Estilos Generales */
@@ -30,7 +35,7 @@ body {
 
 
 /* Contenedores Generales */
-.header-container, .hero-content, .services-container, .footer-container {
+.header-container, .hero-content, .services-container, .footer-container, .contact-container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
@@ -312,6 +317,193 @@ body {
     color: var(--primary-dark-color);
 }
 
+/* Contact Section */
+.contact-section {
+    background-color: var(--background-light); /* Fondo blanco puro */
+    padding: 80px 0; /* Espaciado vertical de la sección */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 600px; /* Altura mínima de la sección */
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-container {
+    display: flex; /* Contenedor principal del texto y el formulario */
+    align-items: center; /* Alinea los ítems verticalmente al centro */
+    justify-content: space-between; /* Espacio entre el texto y el formulario */
+    gap: 60px; /* Espacio entre las dos columnas (texto y formulario) */
+    flex-wrap: wrap; /* Permite que las columnas se apilen en pantallas pequeñas */
+    width: 90%; /* Ancho del contenedor */
+    max-width: 1200px; /* Ancho máximo para el contenedor */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    padding: 0 20px; /* Padding horizontal para el contenido */
+}
+
+/* Estilos de la Columna de Texto de Contacto */
+.contact-text {
+    flex: 1; /* Permite que esta columna crezca y ocupe el espacio */
+    min-width: 300px; /* Ancho mínimo para que el texto no se comprima demasiado */
+    text-align: left; /* Alineación del texto */
+    padding-right: 20px; /* Pequeño espacio a la derecha */
+}
+
+.contact-text h3 {
+    color: var(--contact-text-highlight); /* Color principal azul para el "Ponte en Contacto" */
+    font-size: 0.95em; /* Tamaño de fuente más pequeño */
+    font-weight: 600; /* Semi-negrita */
+    text-transform: uppercase; /* Todo en mayúsculas */
+    margin-bottom: 10px;
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+.contact-title {
+    font-size: 2.8em; /* Tamaño grande para el título principal */
+    font-weight: 700; /* Negrita */
+    margin-bottom: 15px;
+    line-height: 1.2;
+    color: var(--text-dark-color); /* Color de texto oscuro */
+}
+
+.contact-text p {
+    font-size: 1.1em; /* Tamaño de fuente para el párrafo */
+    color: var(--text-light-color); /* Color de texto más claro */
+    margin-bottom: 25px;
+}
+
+/* Línea decorativa debajo del texto (como en la referencia) */
+.contact-text-line {
+    width: 60px; /* Ancho de la línea */
+    height: 3px; /* Grosor de la línea */
+    background-color: var(--primary-color); /* Color principal azul para la línea */
+    margin-top: 20px; /* Espacio superior */
+    border-radius: 2px; /* Bordes ligeramente redondeados para la línea */
+}
+
+/* Estilos de la Tarjeta del Formulario de Contacto */
+.contact-card {
+    flex: 1; /* Permite que la tarjeta crezca y ocupe el espacio */
+    min-width: 350px; /* Ancho mínimo para que el formulario no se comprima */
+    background-color: var(--background-light); /* Fondo blanco puro para la tarjeta */
+    padding: 40px; /* Padding interno de la tarjeta */
+    border-radius: 25px; /* Bordes muy redondeados de la tarjeta */
+    box-shadow: 0 15px 30px var(--shadow-color); /* Sombra suave y pronunciada para efecto flotante */
+    text-align: left; /* Alineación del texto dentro de la tarjeta */
+}
+
+/* Contenedor del formulario dentro de la tarjeta */
+.contact-form {
+    /* Sin padding-bottom aquí, el espaciado entre campos lo manejará */
+}
+
+/* Estilos para las filas de campos (dos o una columna) */
+.contact-form-row {
+    display: flex; /* Habilita Flexbox para organizar los campos */
+    flex-direction: row; /* Elementos en fila por defecto */
+    justify-content: space-between; /* Espacio entre los campos en la fila */
+    gap: 20px; /* Espacio entre los inputs en la misma fila */
+    margin-bottom: 20px; /* Espacio entre las filas de inputs */
+    flex-wrap: wrap; /* Permite que los campos se envuelvan en pantallas pequeñas */
+}
+
+/* Estilos para cada grupo de label e input/textarea */
+.contact-form-item {
+    flex: 1; /* Permite que cada input en una fila crezca y ocupe su parte */
+    display: flex;
+    flex-direction: column; /* Coloca el label encima del input */
+}
+
+.contact-form-item label {
+    font-size: 0.9em; /* Tamaño de fuente del label */
+    color: var(--text-dark-color); /* Color de texto oscuro para el label */
+    margin-bottom: 8px; /* Espacio entre el label y el input */
+    font-weight: 500; /* Peso de fuente medio */
+}
+
+/* Estilos generales para todos los inputs y el textarea */
+.contact-form-item input,
+.contact-form-item textarea {
+    width: 100%; /* Ocupa todo el ancho disponible dentro de su contact-form-item */
+    padding: 12px 18px; /* Padding interno de los campos */
+    border-radius: 10px; /* Bordes redondeados para inputs y textarea */
+    border: none; /* Sin borde visible para un look limpio */
+    background-color: var(--input-background); /* Fondo gris claro para los inputs */
+    height: 50px; /* Altura fija para campos de input */
+    font-size: 1em;
+    color: var(--text-dark-color);
+    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho/alto */
+}
+
+.contact-form-item input::placeholder,
+.contact-form-item textarea::placeholder {
+    color: var(--text-light-color); /* Color más suave para el placeholder */
+    opacity: 0.7; /* Opacidad del placeholder */
+}
+
+.contact-form-item textarea {
+    height: 120px; /* Altura para el textarea */
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 80px; /* Altura mínima para el textarea en responsive */
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilo del Botón de Enviar Formulario */
+.btn.contact-submit-btn {
+    width: 100%; /* Ocupa todo el ancho del formulario */
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end)); /* Degradado azul para el botón */
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 30px; /* Botón bien redondeado */
+    font-weight: 600;
+    font-size: 1.1em;
+    box-shadow: 0 8px 20px rgba(56, 182, 255, 0.3); /* Sombra para el botón azul (usando el color principal) */
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    border: none; /* Asegurar que no tenga borde */
+    cursor: pointer;
+    margin-top: 5px; /* Pequeño margen superior si es necesario */
+}
+
+.btn.contact-submit-btn:hover {
+    background: linear-gradient(to right, var(--gradient-end), var(--gradient-start)); /* Degradado inverso al hover */
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(56, 182, 255, 0.4); /* Sombra más grande al hover */
+}
+
+
+/* Media Queries para esta sección específica */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* Apila texto y formulario en pantallas pequeñas */
+        text-align: center; /* Centra el texto */
+        gap: 50px; /* Espacio cuando están apilados */
+    }
+
+    .contact-text {
+        padding-right: 0; /* Elimina el padding derecho */
+    }
+
+    .contact-text-line {
+        margin: 20px auto 0 auto; /* Centra la línea en vista móvil */
+    }
+
+    .contact-card {
+        padding: 30px; /* Menos padding en móvil */
+        min-width: unset; /* Quita el min-width para adaptarse mejor */
+        width: 100%; /* Ocupa todo el ancho disponible */
+    }
+
+    .contact-form-row {
+        flex-direction: column; /* Apila los inputs de dos columnas en una sola */
+        gap: 15px; /* Espacio entre los campos apilados */
+    }
+
+    .contact-form-item input,
+    .contact-form-item textarea {
+        height: auto; /* Permite que el input se ajuste al padding en móvil */
+        min-height: 45px; /* Altura mínima para inputs */
+    }
+}
 /* Footer */
 .new-footer {
     background-color: var(--text-dark-color); /* Fondo oscuro del footer */
@@ -331,7 +523,7 @@ body {
 
 .footer-col {
     flex: 1; /* Distribuye el espacio */
-    min-width: 200px; /* Ancho mínimo para las columnas */
+    min-width: 250px; /* Ancho mínimo para las columnas */
 }
 
 .footer-col .logo-img.footer-logo {
